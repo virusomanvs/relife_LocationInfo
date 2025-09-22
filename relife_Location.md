@@ -1,23 +1,5 @@
 # Параметры конфигурации локаций
 
-## Структура файла
-
-```json
-{
-    "itemInInvetory": [
-        "map"
-    ],
-    "infoPoints": [
-        {
-            "name": "Название какого-то места",
-            "iconPath": "relife_LocationInfo/images/nearIcon.edds",
-            "radiusToCheck": 50,
-            "position": [9477.38, 7.79762, 1912.24]
-        }
-    ]
-}
-```
-
 ## Описание параметров
 
 | Параметр | Тип | Описание | 
@@ -27,14 +9,25 @@
 
 ### Параметры объекта `infoPoint`
 
-| Параметр | Тип | Описание | Пример | Примечания |
-|----------|-----|----------|---------|------------|
-| `name` | `string` | Название локации или точки интереса | `"Заправочная станция"` | Должно быть уникальным |
-| `iconPath` | `string` | Путь к файлу иконки, отображаемой на карте | `"relife_LocationInfo/images/militaryIcon.edds"` | Формат `.edds`, размер 64x64 или 128x128 пикселей |
-| `iconPath` | `string` | Путь к файлу иконки, отображаемой на карте | `"relife_LocationInfo/images/militaryIcon.edds"` | Формат `.edds`, размер 64x64 или 128x128 пикселей |
-| `iconPath` | `string` | Путь к файлу иконки, отображаемой на карте | `"relife_LocationInfo/images/militaryIcon.edds"` | Формат `.edds`, размер 64x64 или 128x128 пикселей |
-| `radiusToCheck` | `number` | Радиус в метрах для взаимодействия с точкой | `50` | 25-50 (малые), 50-100 (средние), 100-200 (большие) |
-| `position` | `array[3]` | Координаты точки в формате [X, Y, Z] | `[9477.38, 7.79762, 1912.24]` | X,Z - горизонтальные координаты, Y - высота |
+| Параметр | Тип | Описание |
+|----------|-----|----------|
+| `name` | `string` | Название локации или точки интереса | 
+| `iconPath` | `string` | Путь к файлу иконки, отображаемой на карте |
+| `stayVisible` | `bool` | Включить постоянно отображение виджета пока вы находитесь в радиусе действия. Подойдет для сейф зон. | 
+| `notifySound` | `string` | Название звука появления виджета | 
+| `layoutPath` | `string` | Путь к виджету если вы хотите сделать свой. По умолчанию есть 3 виджета.| 
+| `radiusToCheck` | `number` | Радиус в метрах для взаимодействия с точкой |
+| `position` | `array[3]` | Координаты точки в формате [X, Y, Z] |
+
+### Доступные виджеты для layoutPath
+| Параметр | Превью | 
+|----------|-----|
+| `relife_LocationInfo/layout/LocNotificationDanger.layout` | <img width="250" alt="image" src="https://github.com/user-attachments/assets/93e6f5f7-27ed-4482-bc51-3ed939b763ab" />
+ |
+| `relife_LocationInfo/layout/LocNotificationSafe.layout` |  <img width="250"  alt="image" src="https://github.com/user-attachments/assets/38e3f808-4be7-414d-ac2e-d5b003bc8a3b" />
+|
+| `relife_LocationInfo/layout/LocNotification.layout` | <img width="250" alt="image" src="https://github.com/user-attachments/assets/f3f58713-1363-4d17-9f88-21c79d8a6a48" />
+ |
 
 ## Пример использования
 
