@@ -31,6 +31,8 @@
 |----------|-----|----------|---------|------------|
 | `name` | `string` | Название локации или точки интереса | `"Заправочная станция"` | Должно быть уникальным |
 | `iconPath` | `string` | Путь к файлу иконки, отображаемой на карте | `"relife_LocationInfo/images/militaryIcon.edds"` | Формат `.edds`, размер 64x64 или 128x128 пикселей |
+| `iconPath` | `string` | Путь к файлу иконки, отображаемой на карте | `"relife_LocationInfo/images/militaryIcon.edds"` | Формат `.edds`, размер 64x64 или 128x128 пикселей |
+| `iconPath` | `string` | Путь к файлу иконки, отображаемой на карте | `"relife_LocationInfo/images/militaryIcon.edds"` | Формат `.edds`, размер 64x64 или 128x128 пикселей |
 | `radiusToCheck` | `number` | Радиус в метрах для взаимодействия с точкой | `50` | 25-50 (малые), 50-100 (средние), 100-200 (большие) |
 | `position` | `array[3]` | Координаты точки в формате [X, Y, Z] | `[9477.38, 7.79762, 1912.24]` | X,Z - горизонтальные координаты, Y - высота |
 
@@ -38,19 +40,37 @@
 
 ```json
 {
-    "itemInInvetory": ["map"],
+    "itemInInvetory": [],
     "infoPoints": [
         {
-            "name": "Больница Черногорска",
-            "iconPath": "relife_LocationInfo/images/hospitalIcon.edds",
-            "radiusToCheck": 75,
-            "position": [6712.45, 326.42, 2635.78]
+            "name": "Станция Переработки Отходов 1",
+            "iconPath": "relife_LocationInfo/images/nearIcon.edds",
+            "radiusToCheck": 50,
+            "position": [
+                9477.14, 7.74701, 1916.17
+            ]
         },
         {
-            "name": "Аэродром Балота",
-            "iconPath": "relife_LocationInfo/images/airfieldIcon.edds",
-            "radiusToCheck": 150,
-            "position": [4525.12, 10.83, 2490.67]
+            "name": "Лагерь Кумырна",
+            "iconPath": "relife_LocationInfo/images/nearIcon.edds",
+            "radiusToCheck": 10,
+            "stayVisible": 1,
+            "notifySound": "locShowNotifySafe_SoundSet",
+            "layoutPath": "relife_LocationInfo/layout/LocNotificationSafe.layout",
+            "position": [
+                9490.71, 7.989, 1916.28
+            ]
+        },
+        {
+            "name": "Дом с призраками",
+            "iconPath": "relife_LocationInfo/images/nearIcon.edds",
+            "radiusToCheck": 15,
+            "stayVisible": 1,
+            "notifySound": "locShowNotifyDanger_SoundSet",
+            "layoutPath": "relife_LocationInfo/layout/LocNotificationDanger.layout",
+            "position": [
+                9489.77, 8.17192, 1860.17
+            ]
         }
     ]
 }
