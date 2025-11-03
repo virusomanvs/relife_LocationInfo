@@ -18,8 +18,18 @@
 | `layoutPath` | `string` | Путь к виджету если вы хотите сделать свой.| 
 | `radiusToCheck` | `number` | Радиус в метрах для взаимодействия с точкой |
 | `position` | `array[3]` | Координаты точки в формате [X, Y, Z] |
+| `polygonPoints` | `array[ vector ]` | Массив координат фигруы по порядку, без замыкания|
 
-### Доступные виджеты для layoutPath
+### Параметры объекта `markersList`
+| Параметр | Тип | Описание |
+|----------|-----|----------|
+| `markerTitle` | `string` | Название маркера | 
+| `iconPath` | `string` | Путь к файлу иконки, отображаемой на карте |
+| `layoutPath` | `string` | Путь к виджету если вы хотите сделать свой.| 
+| `markerPosition` | `array[3]` | Координаты точки в формате [X, Y, Z] |
+
+
+### Доступные виджеты для layoutPath у уведомления
 | Параметр | Превью | 
 |----------|-----|
 | `relife_LocationInfo/layout/LocNotificationDanger.layout` | <img width="250" alt="image" src="https://github.com/user-attachments/assets/93e6f5f7-27ed-4482-bc51-3ed939b763ab" />|
@@ -27,42 +37,3 @@
 | `relife_LocationInfo/layout/LocNotification.layout` | <img width="250" alt="image" src="https://github.com/user-attachments/assets/f3f58713-1363-4d17-9f88-21c79d8a6a48" /> |
 | `relife_LocationInfo/layout/LocNotificationStalkerOld.layout` | <img width="250" alt="image" src="https://github.com/user-attachments/assets/6c882557-1292-482d-a4bd-395a2b5876f4" /> |
 
-## Пример использования
-
-```json
-{
-    "itemInInvetory": [],
-    "infoPoints": [
-        {
-            "name": "Станция Переработки Отходов 1",
-            "iconPath": "relife_LocationInfo/images/nearIcon.edds",
-            "radiusToCheck": 50,
-            "position": [
-                9477.14, 7.74701, 1916.17
-            ]
-        },
-        {
-            "name": "Лагерь Кумырна",
-            "iconPath": "relife_LocationInfo/images/nearIcon.edds",
-            "radiusToCheck": 10,
-            "stayVisible": 1,
-            "notifySound": "locShowNotifySafe_SoundSet",
-            "layoutPath": "relife_LocationInfo/layout/LocNotificationSafe.layout",
-            "position": [
-                9490.71, 7.989, 1916.28
-            ]
-        },
-        {
-            "name": "Дом с призраками",
-            "iconPath": "relife_LocationInfo/images/nearIcon.edds",
-            "radiusToCheck": 15,
-            "stayVisible": 1,
-            "notifySound": "locShowNotifyDanger_SoundSet",
-            "layoutPath": "relife_LocationInfo/layout/LocNotificationDanger.layout",
-            "position": [
-                9489.77, 8.17192, 1860.17
-            ]
-        }
-    ]
-}
-```
